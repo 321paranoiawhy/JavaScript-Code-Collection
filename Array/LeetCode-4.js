@@ -1,5 +1,6 @@
 // Reference: https://leetcode.com/problems/median-of-two-sorted-arrays/
 // Notice: time complexity  O(log(m+n))
+// LeetCode-4
 
 function findMedianSortedArrays(nums1, nums2) {
     // notice: do not use sort() directly
@@ -14,6 +15,9 @@ function findMedianSortedArrays(nums1, nums2) {
         return mergedArray[(length - 1) / 2];
     }
 }
+
 console.log(findMedianSortedArrays([1, 3], [2])); // 2
+
 console.log(findMedianSortedArrays([1, 2], [3, 4])); // 2.5
+
 console.log(findMedianSortedArrays([3], [-2, -1])); // -1

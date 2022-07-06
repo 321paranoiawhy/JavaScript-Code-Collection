@@ -24,5 +24,7 @@ function mergeArray(array) {
     }
     return result;
 }
+
 console.log(mergeArray([1, 2, 3, 6, 8, 9, 15])); // ['1-3','6','8-9','15']
+
 console.log(mergeArray([1, 2, 3, 10, 11, 12])); // ['1-3','10-12']

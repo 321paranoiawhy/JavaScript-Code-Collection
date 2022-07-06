@@ -1,5 +1,6 @@
 // Reference: https://leetcode.com/problems/valid-sudoku/
 // Possible solution: https://leetcode.com/problems/valid-sudoku/discuss/2027416/Official-solution-in-javascript-beats-82
+// LeetCode-36
 
 function isValidSudoku(board) {
     let length = board.length;
@@ -29,6 +30,7 @@ function isValidSudoku(board) {
     // isValidSudoku
     return true;
 }
+
 let board1 = [["5", "3", ".", ".", "7", ".", ".", ".", "."]
     , ["6", ".", ".", "1", "9", "5", ".", ".", "."]
     , [".", "9", "8", ".", ".", ".", ".", "6", "."]
@@ -39,6 +41,7 @@ let board1 = [["5", "3", ".", ".", "7", ".", ".", ".", "."]
     , [".", ".", ".", "4", "1", "9", ".", ".", "5"]
     , [".", ".", ".", ".", "8", ".", ".", "7", "9"]];
 console.log(isValidSudoku(board1)); // true
+
 let board2 = [["8", "3", ".", ".", "7", ".", ".", ".", "."]
     , ["6", ".", ".", "1", "9", "5", ".", ".", "."]
     , [".", "9", "8", ".", ".", ".", ".", "6", "."]

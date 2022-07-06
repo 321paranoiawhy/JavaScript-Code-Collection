@@ -1,4 +1,5 @@
-// Reference: https://leetcode.com/problems/container-with-most-water/submissions/
+// Reference: https://leetcode.com/problems/container-with-most-water/
+// LeetCode-11
 
 function maxArea(height) {
     // initial left and right
@@ -35,6 +36,9 @@ function maxArea(height) {
     return result;
     // return [result, exactLeft, exactRight];
 }
+
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); // 49    [49, 1, 8]
+
 console.log(maxArea([1, 1])); // 1    [1, 0, 1]
+
 console.log(maxArea([2, 3, 4, 5, 18, 17, 6])); // 17    [17, 4, 5]
