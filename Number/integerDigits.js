@@ -6,6 +6,9 @@
 function integerDigits(n) {
     return Math.floor(Math.log10(n) + 1);
 }
+
 console.log(integerDigits(10)); // 2
+
 console.log(integerDigits(50)); // 3
+
 console.log(integerDigits(100)); // 3
