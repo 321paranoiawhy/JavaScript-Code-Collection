@@ -12,11 +12,6 @@ function validTag(string) {
     }
 
     // 2. grouping tags
-    let groupingTagsRegex = /meta|base|br|hr|img|link|area|input|source|col|frame|param|embed|keygen/;
-    let begin = /1/;
-    if (!selfClosingTagsRegex.test(string) && string.startsWith("<") && string.endsWith(">") && !groupingTagsRegex.test(string)) {
-        return true;
-    }
 
     // 3. not above
     return false;
@@ -39,7 +34,7 @@ console.log(validTag("base>")); // false
 console.log(validTag("<base")); // false
 
 
-console.log(validTag("<div></div>")); // true
+console.log(validTag("<p></p>")); // true
 console.log(validTag("<div>")); // false
 
 
