@@ -7,8 +7,7 @@
 
 function insertionSort(array, order = true, log = false) {
     let length = array.length;
-    let current = 0;
-    let prefix = 0;
+    let current, prefix;
 
     let console = globalThis.console;
     // no log

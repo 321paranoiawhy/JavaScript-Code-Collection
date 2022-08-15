@@ -1,0 +1,63 @@
+class PubSub {
+    messages = {}
+    // 订阅 subscribe / on
+    subscribe(key, callback) {
+        if (!this.messages[key]) {
+            this.messages[key] = [callback];
+        }
+        else {
+            this.messages[key].push(callback);
+
+        }
+    }
+    // 发布 publish / emit
+    publish(key, ...args) {
+        if (!this.messages[key]) throw new Error(`${key} has not subscribed yet.`);
+        else {
+            this.messages[key].forEach(item => item.call(this, ...args));
+            // this.messages[key].forEach(item => item.apply(this, args));
+        }
+    }
+    // 取消订阅
+    unSubscribe(key, callback) {
+        if (!this.messages[key]) throw new Error(`${key} has not subscribed yet.`);
+        else {
+            // 未传入 callback, 则清空 messageName 下的所有订阅
+            if (!callback) {
+                this.messages[key].length = 0;
+                // this.messages[key]= [];
+            }
+            // 已传入 callback, 则仅清空相应的 callback
+            else {
+                this.messages[key].forEach((item, index) => item === callback ? this.messages[key].splice(index, 1) : "");
+            }
+        }
+    }
+}
+
+const manager = new PubSub();
+
+// subscribe TeacherA, TeacherB, TeacherC
+manager.subscribe("TeacherA", (...message) => { console.log(...message) });
+manager.subscribe("TeacherB", (...message) => { console.log(...message) });
+manager.subscribe("TeacherC", (...message) => { console.log(...message) });
+
+manager.publish("TeacherA", "TeacherA's Message One", "TeacherA's Message Two");
+manager.publish("TeacherB", "TeacherB's Message One"); // "TeacherB's Message One"
+manager.publish("TeacherC", "TeacherC's Message One"); // "TeacherC's Message One"
+// 延时发布
+// setTimeout(() => {
+//     manager.publish("TeacherA", "TeacherA's Message One")
+// }, 1000);
+
+const fn = (...message) => { console.log(...message) };
+
+// subscribe TeacherD
+manager.subscribe("TeacherD", fn);
+console.log(manager.messages);
+manager.publish("TeacherD", "TeacherD's Message One"); // "TeacherD's Message One"
+
+// unSubscribe TeacherD
+manager.unSubscribe("TeacherD", fn);
+console.log(manager.messages);
+manager.publish("TeacherD", "TeacherD's Message One"); // nothing happens here, because TeacherD has already been unsubscribed

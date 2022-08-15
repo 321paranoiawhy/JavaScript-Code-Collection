@@ -32,7 +32,7 @@ function bubbleSort(array, order = true) {
             for (let j = length - 1; j > i; j--) {
                 if (array[j] > array[j - 1]) {
                     // exchange the two elements
-                    // in order to let smaller element bubble forward
+                    // in order to let larger element bubble forward
                     [array[j], array[j - 1]] = [array[j - 1], array[j]];
                 }
             }

@@ -5,8 +5,8 @@
  */
 
 function selectionSort(array, order = true) {
-    let length = array.length;
-    let minIndex = 0;
+    let { length } = array;
+    let minIndex;
 
     // ascending order
     if (order) {

@@ -6,15 +6,17 @@
 * [Sorting Algorithms - Geeks for Geeks](https://www.geeksforgeeks.org/sorting-algorithms/)
 * [algorithm-visualizer](https://algorithm-visualizer.org/)
 * [Sorting - visualgo](https://visualgo.net/en/sorting?slide=1)
+* [排序算法](https://wohugb.gitbooks.io/javascript/content/library/sorting.html)
+* []()
 
 # Similarities and Differences Between Sorting Algorithms
 
-| Sorting Algorithms |   Type   | Average Time Complexity | Best Case Time Complexity | Worst Case Time Complexity | Space Complexity |   Stable   |
-| :----------------: | :------: | :---------------------: | :-----------------------: | :------------------------: | :--------------: | :--------: |
-|    Bubble Sort     | In Place |         O(n^2)          |           O(n)            |           O(n^2)           |       O(1)       |   Stable   |
-|   Selection Sort   | In Place |         O(n^2)          |          O(n^2)           |           O(n^2)           |       O(1)       | Not Stable |
-|   Insertion Sort   | In Place |         O(n^2)          |           O(n)            |           O(n^2)           |       O(1)       |   Stable   |
-|     Merge Sort     | In Place |        O(nlogn)         |       O(nlognlogn)        |        O(nlognlogn)        |       O(1)       | Not Stable |
+| Sorting Algorithms |   Type    | Average Time Complexity | Best Case Time Complexity | Worst Case Time Complexity | Space Complexity |   Stable   |
+| :----------------: | :-------: | :---------------------: | :-----------------------: | :------------------------: | :--------------: | :--------: |
+|    Bubble Sort     | In Place  |         O(n^2)          |           O(n)            |           O(n^2)           |       O(1)       |   Stable   |
+|   Selection Sort   | In Place  |         O(n^2)          |          O(n^2)           |           O(n^2)           |       O(1)       | Not Stable |
+|   Insertion Sort   | In Place  |         O(n^2)          |           O(n)            |           O(n^2)           |       O(1)       |   Stable   |
+|     Merge Sort     | Out Place |        O(nlogn)         |         O(nlogn)          |          O(nlogn)          |       O(n)       | Not Stable |
 
 # Bubble Sort
 
@@ -61,7 +63,7 @@ function bubbleSort(array, order = true) {
             for (let j = length - 1; j > i; j--) {
                 if (array[j] > array[j - 1]) {
                     // exchange the two elements
-                    // in order to let smaller element bubble forward
+                    // in order to let larger element bubble forward
                     [array[j], array[j - 1]] = [array[j - 1], array[j]];
                 }
             }
@@ -110,6 +112,7 @@ console.log(bubbleSort([5, 3, 8, 3, 4, 6], false)); // [8, 6, 5, 4, 3, 3]
 ## Reference
 
 * [Bubble Sort - algorithm-visualizer](https://algorithm-visualizer.org/brute-force/bubble-sort)
+* [Computer science in JavaScript: Bubble sort](https://humanwhocodes.com/blog/2009/05/26/computer-science-in-javascript-bubble-sort/)
 
 # Selection Sort
 
@@ -210,6 +213,7 @@ console.log(selectionSort([5, 3, 8, 3, 4, 6], false)); // [8, 6, 5, 4, 3, 3]
 * [Selection Sort - algorithm-visualizer](https://algorithm-visualizer.org/brute-force/selection-sort)
 * [选择排序 - Khan Academy](https://zh.khanacademy.org/computing/computer-science/algorithms/sorting-algorithms/a/selection-sort-pseudocode)
 * [选择排序 - 伪代码算法及 C++ 和 Python 实现](https://blog.csdn.net/wxh928408225/article/details/70176999)
+* [Computer science in JavaScript: Insertion sort](https://humanwhocodes.com/blog/2012/09/17/computer-science-in-javascript-insertion-sort/)
 
 # Insertion Sort
 
@@ -327,6 +331,7 @@ At last: [3, 4, 5, 6, 8]
 ## Reference
 
 * [Insertion Sort - algorithm-visualizer](https://algorithm-visualizer.org/brute-force/insertion-sort)
+* [Computer science in JavaScript: Insertion sort](https://humanwhocodes.com/blog/2012/09/17/computer-science-in-javascript-insertion-sort/)
 
 # Merge Sort
 
@@ -452,3 +457,7 @@ console.log(mergeSort([5, 3, 8, 3, 4, 6], false)); // [8, 6, 5, 4, 3, 3]
 
 // At last: [3, 4, 5, 6, 8]
 ```
+
+## Reference
+
+* [Computer science in JavaScript: Merge sort](https://humanwhocodes.com/blog/2012/10/02/computer-science-and-javascript-merge-sort/)
